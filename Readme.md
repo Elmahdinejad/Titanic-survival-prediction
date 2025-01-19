@@ -1,4 +1,4 @@
-### **Titanic Survival Prediction**
+## **Titanic Survival Prediction**
 
 The sinking of the RMS Titanic on April 15, 1912, is one of the most infamous maritime disasters
 in history, leading to the tragic loss of over 1,500 lives. This catastrophic event has since captivated public interest and inspired numerous studies to understand the factors that contributed to survival.
@@ -35,7 +35,7 @@ The dataset used for this analysis is derived from the Titanic passenger manifes
 
     Q = Queenstown, S = Southampton).
 
-    **Data Preprocessing**
+**Data Preprocessing**
 
 In the Titanic dataset, missing values are a common challenge that can significantly impact the accuracy of any predictive model. Specifically, the Age and Cabin columns contain missing data, which can lead to biased results if not appropriately addressed.
 After experimenting with different approaches, we found that the model achieved its best accuracy when we chose to drop rows with missing values, particularly focusing on the Age column. While some information was lost, the simplicity and effectiveness of this method in producing a more robust model highlighted the trade-offs between data completeness and predictive performance. Also the Cabin column has many missing values as well. Due to the large number of missing entries, we considered dropping this feature altogether.
@@ -60,8 +60,11 @@ After developing the initial models, we focused on improving their performance. 
 The highest accuracy among the individual models belongs to the XGBoost algorithm, which has an accuracy of 87.8%.
 And as expected, the best result obtained from all models is related to the stacking model, which predicts survival with an accuracy of 90% on the test data.
 Based on output classification report of the stacking classifier, we can see that the classification model shows strong and acceptable performance, confirmed by an overall accuracy of 0.90. This means that the model correctly classifies 90% of the cases in the data. The metrics of precision and recall provide more insight into the model's performance:
+
 • Class 0 has a high precision of 0.89 and an excellent recall of 0.95, indicating that the model is successful in identifying true negatives and also correctly identifies the majority of positive cases.
+
 • Class 1, although having a lower recall of 0.82, maintains a strong precision of 0.92, indicating that the model has high accuracy when predicting this class.
+
 The F1 score is 0.92 for class 0 and 0.87 for class 1, showing a good balance between precision and recall.
 The results indicate a significant improvement in performance compared to any individual model, emphasizing the benefits of ensemble methods in tackling complex classification problems.
 
